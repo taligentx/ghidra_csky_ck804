@@ -1,4 +1,3 @@
-
 # add-substract Part
 # addu 16 bit instruction ----1
 :addu i16_r4_rz, i16_r4_rx is i16_optype = 0b01 & i16_4op = 0b1000 & i16_r4_sop = 0b00 & i16_r4_rz & i16_r4_rx {
@@ -9,9 +8,9 @@
     i16_r3_rz = i16_r3_rx + i16_r3_ry;
 }
 :addc i16_r4_rz, i16_r4_rx is i16_optype = 0b01 & i16_4op = 0b1000 & i16_r4_sop = 0b01 & i16_r4_rz & i16_r4_rx {
-	local tmp:4 = psr_cf;
-	psr_cf = carry(i16_r4_rz, i16_r4_rx) || ( i16_r4_rz + i16_r4_rx == 0xFFFFFFFF && tmp == 1 );
-	i16_r4_rz = i16_r4_rz + i16_r4_rx + tmp;
+    local tmp:4 = psr_cf;
+    psr_cf = carry(i16_r4_rz, i16_r4_rx) || ( i16_r4_rz + i16_r4_rx == 0xFFFFFFFF && tmp == 1 );
+    i16_r4_rz = i16_r4_rz + i16_r4_rx + tmp;
 }
 # addi 16 bit instruction ----1
 :addi i16_imm8_rz, oimm is i16_optype = 0b00 & i16_3op = 0b100 & i16_imm8_rz & i16_imm8_imm [oimm = (i16_imm8_imm+1);] {
@@ -38,9 +37,9 @@
     i16_r3_rz = i16_r3_rx - i16_r3_ry;
 }
 :subc i16_r4_rz, i16_r4_rx is i16_optype = 0b01 & i16_4op = 0b1000 & i16_r4_sop = 0b11 & i16_r4_rz & i16_r4_rx {
-	local tmp:4 = psr_cf;
-	psr_cf = (i16_r4_rz >= i16_r4_rx) && ( tmp != 0b0 || i16_r4_rz != i16_r4_rx );
-	i16_r4_rz = i16_r4_rz - i16_r4_rx - (tmp ^ 1);
+    local tmp:4 = psr_cf;
+    psr_cf = (i16_r4_rz >= i16_r4_rx) && ( tmp != 0b0 || i16_r4_rz != i16_r4_rx );
+    i16_r4_rz = i16_r4_rz - i16_r4_rx - (tmp ^ 1);
 }
 # subi instruction ----1
 :subi i16_imm8_rz, oimm is i16_optype = 0b00 & i16_3op = 0b101 & i16_imm8_rz & i16_imm8_imm [oimm = (i16_imm8_imm+1);] {
@@ -109,7 +108,7 @@ with : i16_optype = 0b01 & i16_4op = 0b1011 {
 # lsl/lsr/asr/rotl six low bits of rx / rx[5:0] as shift value
 with : i16_optype = 0b01 & i16_4op = 0b1100 {
     :lsl i16_r4_rz, i16_r4_rx is i16_optype = 0b01 & i16_4op = 0b1100 & i16_r4_sop = 0b00 & i16_r4_rz & i16_r4_rx {
-		local tmp:4 = i16_r4_rx & 0x3f;
+        local tmp:4 = i16_r4_rx & 0x3f;
         i16_r4_rz = zext( i16_r4_rz << tmp );
     }
     :lsr i16_r4_rz, i16_r4_rx is i16_optype = 0b01 & i16_4op = 0b1100 & i16_r4_sop = 0b01 & i16_r4_rz & i16_r4_rx {

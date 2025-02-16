@@ -1,4 +1,3 @@
-
 define token ins16(16)
     i16_optype = (14,15)
     i16_4op = (10,13)
@@ -62,9 +61,7 @@ attach variables [i16_r3_rz i16_r3_ry i16_r3_rx    i16_imm8_rz i16_imm8_rx i16_i
 
 
 @include "16b_data.sinc"
-
 @include "16b_branch.sinc"
-
 @include "16b_memory.sinc"
 
 :bkpt is i16_optype = 0b00 & i16_4op = 0b0000 & i16_j_offset = 0 {
