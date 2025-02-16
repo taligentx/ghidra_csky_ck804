@@ -1,4 +1,3 @@
-
 # Immediate operand offset access Part
 with : i32_op = 0b0110 {
     :ld.b i32_imm12_rz, (i32_imm12_rx, i32_imm12_imm) is i32_imm12_sop = 0b0000 & i32_imm12_rz & i32_imm12_rx & i32_imm12_imm {

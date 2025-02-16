@@ -78,10 +78,10 @@ i32_imm16_immSP_O2: label is i32_imm16_imm [label = (inst_start + (i32_imm16_imm
 i32_ext: is i32_r_pcode = i32_r_imm5 & i32_r_pcode & i32_r_imm5 {}
 
 with : i32_optype = 0b11 {
-@include "32b_data.sinc"
-@include "32b_branch.sinc"
-@include "32b_memory.sinc"
-#@include "32b_coproc.sinc"
-#@include "32b_priv.sinc"
-@include "32b_special.sinc"
+    @include "32b_data.sinc"
+    @include "32b_branch.sinc"
+    @include "32b_memory.sinc"
+    #@include "32b_coproc.sinc"
+    #@include "32b_priv.sinc"
+    @include "32b_special.sinc"
 }

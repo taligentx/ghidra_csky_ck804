@@ -1,4 +1,3 @@
-
 # b* jsr/rts
 with : i32_op = 0b1010 {
     # bt
@@ -72,4 +71,3 @@ with : i32_op = 0b1010 {
     r15 = inst_next;
     call i32_j_offset;
 }
-

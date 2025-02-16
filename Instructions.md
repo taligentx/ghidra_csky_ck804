@@ -8,9 +8,9 @@
 - [x] SUBC32 Subtract with borrow unsigned
 - [x] SUBI32 Subtract immediate unsigned
 - [ ] RSUB32 Reverse subtract
-- [ ] IXH32 Index half-word
-- [ ] IXW32 Index word
-- [ ] IXD32 Index double word
+- [x] IXH32 Index half-word
+- [x] IXW32 Index word
+- [x] IXD32 Index double word
 - [x] INCF32 C=0 add immediate
 - [x] INCT32 C=1 add immediate
 - [x] DECF32 C=0 subtract immediate
@@ -124,6 +124,7 @@
 - [x] BF32 C=0 branch instruction
 - [x] BEZ32 Branch instruction when register is equal to zero
 - [x] BNEZ32 Branch instruction when register is not equal to zero
+- [ ] BNEZAD32 Branch instruction when register is not equal to zero and decrement
 - [x] BHZ32 Branch instruction when register is greater than zero
 - [x] BLSZ32 Branch instruction when register is smaller than or equal to zero
 - [x] BLZ32 Branch instruction when register is smaller than zero
