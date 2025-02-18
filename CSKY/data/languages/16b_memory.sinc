@@ -89,3 +89,8 @@ pop16braced: {pop16lr, pop16list} is pop16lr & pop16list                {}
     local tmp:4 = r15 & 0xfffffffe;
     return [tmp];
 }
+
+:nie   is i16_bit_0015 = 0b0001010001100000 {stub();}
+:nir   is i16_bit_0015 = 0b0001010001100001 {stub();}
+:ipush is i16_bit_0015 = 0b0001010001100010 {stub();}
+:ipop  is i16_bit_0015 = 0b0001010001100011 {stub();}

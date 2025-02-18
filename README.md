@@ -4,7 +4,7 @@
 * Download the built extension from GitHub
   * Visit the [Releases](../../releases) page, normally use the latest release
   * Download the built extension zip file, the name will be similar to:
-    `ghidra_10.1_PUBLIC_YYYYMMDD_CSKY.zip`
+    `ghidra_11.3_PUBLIC_YYYYMMDD_CSKY.zip`
 * Install the extension into Ghidra
   * Start Ghidra
   * Open `File->Install Extensions...`
@@ -14,7 +14,5 @@
   * Press `OK`
   * You will be prompted to restart Ghidra for the changes to take effect
 
-## TODO List
-
-### Instructions
-see [Instructions](./Instructions.md)
+## Supported Instructions
+[Instructions](./Instructions.md)

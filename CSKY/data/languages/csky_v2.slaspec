@@ -8,4 +8,4 @@
 @include "32b.sinc"
 
 # floating point instruction
-#@include "float.sinc"
+@include "float.sinc"

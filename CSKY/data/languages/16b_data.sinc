@@ -54,7 +54,7 @@
     sp = sp - imm;
 }
 
-# logcial operation Part
+# logical operation Part
 with : i16_optype = 0b01 & i16_4op = 0b1010 {
     :and i16_r4_rz, i16_r4_rx is i16_r4_sop = 0b00 & i16_r4_rz & i16_r4_rx {
         i16_r4_rz = i16_r4_rz & i16_r4_rx;
@@ -62,6 +62,10 @@ with : i16_optype = 0b01 & i16_4op = 0b1010 {
     :andn i16_r4_rz, i16_r4_rx is i16_r4_sop = 0b01 & i16_r4_rz & i16_r4_rx {
         local tmp:4 = i16_r4_rz & i16_r4_rx;
         i16_r4_rz = ~tmp;
+    }
+    :tst i16_r4_rx, i16_r4_ry is i16_r4_sop = 0b10 & i16_r4_rx & i16_r4_ry {
+        local tmp = i16_r4_rx & i16_r4_ry;
+        psr_cf = (tmp != 0);
     }
 }
 
@@ -103,7 +107,6 @@ with : i16_optype = 0b01 & i16_4op = 0b1011 {
     i16_imm7_rz = *:4 (tmp);
 }
 
-
 # shift Part
 # lsl/lsr/asr/rotl six low bits of rx / rx[5:0] as shift value
 with : i16_optype = 0b01 & i16_4op = 0b1100 {
@@ -134,7 +137,6 @@ with : i16_optype = 0b01 & i16_4op = 0b1100 {
     i16_imm5_rz = i16_imm5_rx s>> i16_imm5_imm;
 }
 
-
 # compare Part
 # cmp* with register
 with : i16_optype = 0b01 & i16_4op = 0b1001 {
@@ -151,6 +153,7 @@ with : i16_optype = 0b01 & i16_4op = 0b1001 {
         psr_cf = (i16_r4_rx s< i16_r4_ry);
     }
 }
+
 # cmp* with imm
 with : i16_optype = 0b00 & i16_3op = 0b111 {
     # cmphsi
@@ -213,7 +216,6 @@ with : i16_optype = 0b01 & i16_4op = 0b1110 {
         i16_r4_rz[0,8] = i16_r4_rx[8,8];
     }
 }
-
 
 # multiply-divide Part
 # mult/mulsh

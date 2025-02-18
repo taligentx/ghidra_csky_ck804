@@ -12,13 +12,17 @@ with : i32_op = 0b1010 {
     :br i32_imm16_immSP_O1 is i32_imm16_sop = 0b00000 & i32_imm16_rx = 0b00000 & i32_imm16_immSP_O1 {
         goto i32_imm16_immSP_O1;
     }
-
     # bez
     :bez i32_imm16_rx, i32_imm16_immSP_O1 is i32_imm16_sop = 0b01000 & i32_imm16_rx & i32_imm16_immSP_O1 {
         if(i32_imm16_rx == 0) goto i32_imm16_immSP_O1;
     }
     # bnez
     :bnez i32_imm16_rx, i32_imm16_immSP_O1 is i32_imm16_sop = 0b01001 & i32_imm16_rx & i32_imm16_immSP_O1 {
+        if(i32_imm16_rx != 0) goto i32_imm16_immSP_O1;
+    }
+    # bnezad
+    :bnezad i32_imm16_rx, i32_imm16_immSP_O1 is i32_imm16_sop = 0b00001 & i32_imm16_rx & i32_imm16_immSP_O1 {
+        i32_imm16_rx = i32_imm16_rx - 1;
         if(i32_imm16_rx != 0) goto i32_imm16_immSP_O1;
     }
     # bhz
@@ -63,8 +67,6 @@ with : i32_op = 0b1010 {
         goto [dest];
     }
 }
-
-
 
 # bsr 32 bit
 :bsr i32_j_offset is i32_optype = 0b11 & i32_op = 0b1000 & i32_j_offset {

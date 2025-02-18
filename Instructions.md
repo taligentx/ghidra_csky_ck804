@@ -49,7 +49,7 @@
 - [x] CMPHSI32 Compare immediate unsigned when greater or equal
 - [x] CMPLT32 Compare signed when smaller
 - [x] CMPLTI32 Compare immediate signed when smaller
-- [ ] TST32 Null-test
+- [x] TST32 Null-test
 - [ ] TSTNBZ32 Register test without byte equal to zero
 ##### data transfer
 - [x] MOV32 Move
@@ -89,7 +89,7 @@
 - [ ] BREV32 Bit-reverse
 - [ ] REVB32 Byte-reverse
 - [ ] REVH32 Half-word byte-reverse 
-##### Mutliply-divide
+##### multiply-divide
 - [x] MULU32 Multiply unsigned
 - [x] MULUA32 Multiply-accumulate unsigned
 - [x] MULUS32 Multiply-subtract unsigned
@@ -109,26 +109,29 @@
 - [ ] VMULSWA32 16x32 multiply-accumulate signed in two branches
 - [ ] VMULSWS32 16x32 multiply-subtract signed in two branches
 - [x] MULT32 Multiply
+- [ ] *MUL.U32 Multiply unsigned
+- [ ] *MUL.S32 Multiply signed
+- [ ] *MULA.32.L Multiply-accumulate signed with the lower 32 bits taken
 - [x] DIVU32 Divide unsigned
 - [x] DIVS32 Divide signed
 ##### miscellaneous operation
 - [x] ABS32 Absolute value
 - [ ] FF0. 32 Fast find 0
-- [ ] FF1. 32 Fast find 1
+- [ ] *FF1. 32 Fast find 1
 - [x] BMASKI32 Bit mask generation immediate
 - [ ] BGENR32 Register bit generation
 - [ ] BGENI32 Bit generation immediate
 #### Branch Jump
 ##### branch
-- [x] BT32 C=1 branch instruction
-- [x] BF32 C=0 branch instruction
-- [x] BEZ32 Branch instruction when register is equal to zero
-- [x] BNEZ32 Branch instruction when register is not equal to zero
-- [ ] BNEZAD32 Branch instruction when register is not equal to zero and decrement
-- [x] BHZ32 Branch instruction when register is greater than zero
-- [x] BLSZ32 Branch instruction when register is smaller than or equal to zero
-- [x] BLZ32 Branch instruction when register is smaller than zero
-- [x] BHSZ32 Branch instruction when register is greater than or equal to zero
+- [x] BT32 C=1 branch
+- [x] BF32 C=0 branch
+- [x] BEZ32 Branch when register is equal to zero
+- [x] BNEZ32 Branch when register is not equal to zero
+- [x] BNEZAD32 Branch when register is not equal to zero after decrement
+- [x] BHZ32 Branch when register is greater than zero
+- [x] BLSZ32 Branch when register is smaller than or equal to zero
+- [x] BLZ32 Branch when register is smaller than zero
+- [x] BHSZ32 Branch when register is greater than or equal to zero
 ##### jump
 - [x] BR32 Unconditional jump
 - [x] BSR32 Jump to subprogram
@@ -161,44 +164,44 @@
 - [x] STR32.W Store word in register offset addressing
 ##### Multi-register access
 - [ ] LDQ32 Load consecutive quad word
-- [ ] LDM32 Load consecutive multiword
+- [x] LDM32 Load consecutive multiword
 - [ ] STQ32 Store consecutive quad word
-- [ ] STM32 Store consecutive multiword
+- [x] STM32 Store consecutive multiword
 - [x] PUSH32 Push
 - [x] POP32 Pop
 ##### Exclusive access 
 - [ ] LDEX32.W Load word exclusive
 - [ ] STEX32.W Store word exclusive
 - [ ] LRS32.B Load byte sign
-- [ ] LRS32.H Load half-word sign
+- [x] LRS32.H Load half-word sign
 - [ ] LRS32.W Load word sign
 - [ ] SRS32.B Store byte sign
-- [ ] SRS32.H Store half-word sign
+- [x] SRS32.H Store half-word sign
 - [ ] SRS32.W Store word sign
 #### Co-processor
 ##### co-processor data transfer
-- [ ] CPRGR32 Read transfer from general-purpose register of co-processor
+- [ ] *CPRGR32 Read transfer from general-purpose register of co-processor
 - [ ] CPWGR32 Write transfer to general-purpose register of co-processor
-- [ ] CPRCR32 Read transfer from control register of co-processor
+- [ ] *CPRCR32 Read transfer from control register of co-processor
 - [ ] CPWCR32 Write transfer to control register of co-processor
 - [ ] CPRC32 Read transfer from condition bit of co-processor
 ##### co-processor memory access
 - [ ] LDCPR32 Load word to co-processor
 - [ ] STCPR32 Store word in co-processor
 ##### co-processor operation
-- [ ] CPOP32 Co-processor operation instruction
+- [ ] *CPOP32 Co-processor operation instruction
 #### Privileged instruction
 ##### control register operation
-- [ ] MFCR32 Read from control register
-- [ ] MTCR32 Write to control register
-- [ ] PSRSET32 Set PSR bit
-- [ ] PSRCLR32 Clear PSR bit
+- [ ] *MFCR32 Read from control register
+- [ ] *MTCR32 Write to control register
+- [ ] *PSRSET32 Set PSR bit
+- [ ] *PSRCLR32 Clear PSR bit
 ##### Low power consumption
 - [ ] WAIT32 Enter low power consumption wait mode
 - [ ] DOZE32 Enter low power consumption doze mode
 - [ ] STOP32 Enter low power consumption stop mode
 ##### Abnormal return
-- [ ] RTE32 Return from abnormal and normal interrupt
+- [ ] *RTE32 Return from abnormal and normal interrupt
 - [ ] RFI32 Return from fast interrupt
 ##### Safe state
 - [ ] STRAP32 Enter safe state
@@ -218,7 +221,7 @@
 
 ### 16 Bit
 #### Data Operation
-##### add- substract
+##### add-substract
 - [x] ADDU16 Add unsigned
 - [x] ADDC16 Add with carry unsigned
 - [x] ADDI16 Add immediate unsigned
@@ -226,7 +229,7 @@
 - [x] SUBU16 Subtract unsigned
 - [x] SUBC16 Subtract with borrow unsigned
 - [x] SUBI16 Subtract immediate unsigned
-#####  logcial operation
+#####  logical operation
 - [x] AND16 Bitwise AND
 - [x] ANDN16 Bitwise AND-NOT
 - [x] OR16 Bitwise OR
@@ -248,7 +251,7 @@
 - [x] CMPHSI16 Compare immediate unsigned when greater or equal
 - [x] CMPLT16 Compare signed when smaller
 - [x] CMPLTI16 Compare immediate signed when smaller
-- [ ] TST16 Null-test
+- [x] TST16 Null-test
 - [ ] TSTNBZ16 Register test without byte equal to zero
 ##### data transfer
 - [x] MOV16 Move
@@ -298,10 +301,73 @@
 - [ ] BPOP16.H Binary pop of translated half-word
 - [ ] BPOP16.W Binary pop of translated word
 #####  interrupt nesting acceleration
-- [ ] NIE Interrupt nesting enable
-- [ ] NIR Interrupt nesting return
-- [ ] IPUSH Interrupt push
-- [ ] IPOP Interrupt pop
+- [ ] *NIE Interrupt nesting enable
+- [ ] *NIR Interrupt nesting return
+- [ ] *IPUSH Interrupt push
+- [ ] *IPOP Interrupt pop
 
-### Float
-TBD
+### Floating point
+#### Data operation
+##### Single precision
+- [ ] *FSTOSI.RZ Transform float into signed integer
+- [ ] *FSTOUI.RZ Transform float into unsigned integer
+- [ ] *FSITOS Transform signed integer into float
+- [ ] *FUITOS Transform unsigned integer into float
+- [ ] *FCMPZHSS float compare when greater than or equal to zero
+- [ ] FCMPZLSS float compare when smaller than or equal to zero
+- [ ] FCMPZNES float compare when not equal to zero
+- [ ] FCMPZUOS Judge whether the single operand of float is NaN
+- [ ] FCMPHSS float compare when greater than or equal
+- [ ] *FCMPLTS float compare when smaller
+- [ ] FCMPNES float compare when not equal
+- [ ] *FCMPUOS Judge whether the double operand of float is NaN
+- [ ] *FMOVS float move
+- [ ] FABSS float absolute value
+- [ ] *FNEGS float negate
+- [ ] *FSQRTS float square root
+- [ ] FRECIPS float reciprocal
+- [ ] *FADDS float add
+- [ ] *FSUBS float subtract
+- [ ] *FMULS float multiply
+- [ ] *FDIVS float division
+- [ ] *FMACS float multiply-accumulate
+- [ ] *FMSCS float multiply-subtract
+- [ ] FNMACS float multiply-negate-accumulate
+- [ ] FNMSCS float multiply-negate-subtract
+- [ ] FNMULS float multiply-negate
+#### Data transfer
+- [ ] *FMTVRL Write transfer to low word of floating point register
+- [ ] FMTVRH Write transfer to high word of floating point register
+- [ ] *FMFVRL Read transfer low word from floating point register
+- [ ] FMFVRH Read transfer high word from floating point register
+- [ ] FLRWS Single-precision floating point storage read-in
+- [ ] FLRWD Double-precision floating point storage read-in
+#### Memory
+- [ ] *FLDS Load single-precision floating point (previously FLD.32)
+- [ ] *FLDRS Load single-precision floating point in register offset addressing
+- [ ] *FLDMS Load consecutive single-precision floating point
+- [ ] *FSTS Store single-precision floating point
+- [ ] FSTRS Store single-precision floating point in register offset addressing
+- [ ] *FSTMS Store consecutive single-precision floating point
+
+### DSPv2
+#### Data Operation
+##### add-substract
+- [ ] *ADD.64 64-bit addition
+- [ ] *ADDH.U32 32-bit unsigned addition and averaging
+- [ ] *SUB.64 64-bit subtraction
+##### compare
+- [ ] *MAX.S32 32-bit signed max value
+- [ ] *MAX.U32 32-bit unsigned max value
+- [ ] *MIN.S32 32-bit signed min value
+- [ ] *MIN.U32 unsigned max value
+#### Memory Access
+- [ ] *LDBI.B Load unsigned byte with incrementing address
+- [ ] *LDBI.H Load unsigned half-word with incrementing address
+- [ ] *LDBI.W Load unsigned word with incrementing address
+- [ ] *STBI.B Store unsigned byte with incrementing address
+- [ ] *STBI.H Store unsigned half-word with incrementing address
+- [ ] *STBI.W Store unsigned word with incrementing address
+### VDSP
+- [ ] *VCMPHS.U32
+- [ ] *VADD.S16.H
