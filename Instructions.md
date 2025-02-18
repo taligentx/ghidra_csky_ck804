@@ -1,3 +1,5 @@
+Note: Instructions marked with "*" are listing-only, no pcode yet and will show as stub(); in the decompiler.
+
 ### 32 Bit
 #### Data operation
 ##### add-subtract
